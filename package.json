@@ -1,0 +1,36 @@
+{
+  "name": "products-grahpql",
+  "version": "1.0.0",
+  "description": "Simple Products GraphQL For MicroService",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "nodemon -e js,graphql,json && server",
+    "lint": "standard",
+    "lint-fix": "standard --fix"
+  },
+  "author": "Nestor Infante",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.9.3",
+    "apollo-server-express": "^2.15.1",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "loadash": "^1.0.0",
+    "moment": "^2.27.0"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}

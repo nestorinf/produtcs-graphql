@@ -1,0 +1,11 @@
+[
+    {
+        "products": "products/resolvers",
+        "datasource": {
+            "productsAPI": {
+                "baseURL": "http://192.168.1.50:3400/api",
+                "path": "products/datasource/apiMongo"
+            }
+        }
+    }
+]

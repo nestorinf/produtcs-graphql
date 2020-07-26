@@ -1,0 +1,65 @@
+
+type Products {
+    _id: ID!
+    name: String!
+    code: String!
+    img: String
+    price:Prices
+    status: String!
+    visible: Boolean
+    categories: [Categories]
+}
+
+input ProductInput {
+    name: String!
+    code: String!
+    img: String
+    price: PricesInput
+    status: String!
+    visible: Boolean
+    categories: [Int]
+}
+
+type Prices {
+    amount: Float!
+    tax: String!
+}
+
+input PricesInput {
+    amount: Float!
+    tax: String!
+}
+
+type Categories {
+    _id: ID!
+    name: String!
+    categoryID:Int!
+    description: String
+    cover: String!
+    path: String
+}
+
+input CategoriesInput{
+    name: String!
+    categoryID:Int!
+    description: String
+    cover: String!
+    path: String
+}
+
+
+extend type Query {
+    "Devuelve todos los productos"
+    getProducts: [Products]
+    "Devuelve un producto"
+    getProduct(_id: ID!) : Products
+    "Devuelve todas las categorias"
+    getCategories: [Categories]
+}
+
+extend type Mutation {
+    "Registra los productos"
+    createProducts(input:ProductInput) : [Products]
+    "Registra las categorias"
+    createCategories(input:CategoriesInput) : [Categories]
+}
