@@ -50,7 +50,9 @@ input CategoriesInput{
 
 extend type Query {
     "Devuelve todos los productos"
-    getProducts(categoryID: ID): [Products]
+    getProducts: [Products]
+    "Devuelve todos los productos of category"
+    getProductsByCategory(categoryID: Int) : [Products]
     "Devuelve un producto"
     getProduct(_id: ID!) : Products
     "Devuelve todas las categorias"

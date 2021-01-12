@@ -10,6 +10,6 @@ module.exports = {
     resolvers:{
         Query:queries,
         Mutation:mutation,
-        ...types
+       // ...types
     }
 }

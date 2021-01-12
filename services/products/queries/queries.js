@@ -21,14 +21,17 @@ const getProducts = async (_,args,context) =>  {
         throw new Error(error.name)
     }
 }
-const getProductsByCategory = async (_,{CategoryID},context) =>  {
+const getProductsByCategory = async (_,args,context) =>  {
     const { dataSources } = context
     try {
-        const result =  await dataSources.productsAPI.getProductsByCategory(CategoryID)
+        const categoryID = {
+            categoryID : parseInt(args.categoryID)
+        }
+        const result =  await dataSources.productsAPI.getProductsByCategory(categoryID)
         return result.data
-    } catch (error) {
+     } catch (error) {
         throw new Error(error.name)
-    }
+    } 
 }
 
 const getCategories = async(_,args,context) => {

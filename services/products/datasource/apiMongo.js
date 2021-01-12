@@ -15,10 +15,7 @@ class Products extends RESTDataSource {
         return await this.get('products/'+id)
     }
     
-    async getProductsByCategory(categoryID) {
-        const query = {
-            categoryID:categoryID
-        }
+    async getProductsByCategory(query) {
         return await this.post('query/products',query)
     }
 
