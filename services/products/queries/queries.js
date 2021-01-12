@@ -21,6 +21,15 @@ const getProducts = async (_,args,context) =>  {
         throw new Error(error.name)
     }
 }
+const getProductsByCategory = async (_,{CategoryID},context) =>  {
+    const { dataSources } = context
+    try {
+        const result =  await dataSources.productsAPI.getProductsByCategory(CategoryID)
+        return result.data
+    } catch (error) {
+        throw new Error(error.name)
+    }
+}
 
 const getCategories = async(_,args,context) => {
     const {dataSources} = context
@@ -37,6 +46,7 @@ const getCategories = async(_,args,context) => {
 
 module.exports = {
     getProducts,
+    getProductsByCategory,
     getCategories,
     getProduct
     

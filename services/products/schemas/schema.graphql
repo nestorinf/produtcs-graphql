@@ -7,7 +7,7 @@ type Products {
     price:Prices
     status: String!
     visible: Boolean
-    categories: [Categories]
+    categoryID: Number
 }
 
 input ProductInput {
@@ -50,7 +50,7 @@ input CategoriesInput{
 
 extend type Query {
     "Devuelve todos los productos"
-    getProducts: [Products]
+    getProducts(categoryID: ID): [Products]
     "Devuelve un producto"
     getProduct(_id: ID!) : Products
     "Devuelve todas las categorias"
