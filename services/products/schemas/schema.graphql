@@ -7,7 +7,7 @@ type Products {
     price:Prices
     status: String!
     visible: Boolean
-    categoryID: Number
+    categoryID: Int
 }
 
 input ProductInput {
